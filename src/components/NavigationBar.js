@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {FaMoon, FaUsers} from "react-icons/fa";
+import {FaMoon} from "react-icons/fa";
 import { Link } from "@reach/router";
 
 class NavigationBar extends Component {
@@ -10,7 +10,7 @@ class NavigationBar extends Component {
             <nav className="site-nav family-sans navbar navbar-expand navbar-dark bg-secondary higher">
                 <div className="container-fluid">
                     <Link to="/" className="navbar-brand">
-                        <FaMoon className="mr-1"/> CVE Browser
+                        <FaMoon className="mr-1"/> Sample Frontend
                     </Link>
                     <div className="navbar-nav ml-auto">
                         {user && (
