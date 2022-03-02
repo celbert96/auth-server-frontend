@@ -1,6 +1,13 @@
-# Getting Started with Create React App
+# Description
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+This simple react.js application was created in order to demonstrate how JWTs can securely be utilized by an SPA. It is the front end component of celbert96/TSAuthServer, a basic auth server written in Typescript. 
+
+When the user logs in, the SPA makes an HTTP request to an authentication endpoint on the auth server. If authentication is successful, the auth server mints a JWT and creates a sessionToken cookie to store that JWT. Information about the JWT (expiration datetime, etc) is provided in the response body. This sessionToken cookie is set to HTTP Only, meaning the SPA doesn't have direct access to the token. Because the SPA cannot access the token directly, it must rely on and store the information provided in the response body of the authentication call. Because those values are stored on the client they can be tampered with - however they are only there to provide a better user experience. The source of truth for all authorization checks server side is the JWT stored in the sessionToken cookie.
+
+NOTE: This application just serves as a proof of concept/exercise and is not production ready. For example, there is no refresh token provided to the client, so once a JWT is provided there is no way to request a new one - it will simply expire after the expiration datetime and the user will be logged out. This is not a good user experience.
+
 
 ## Available Scripts
 
